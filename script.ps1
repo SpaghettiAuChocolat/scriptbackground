@@ -1,4 +1,3 @@
-Start-Process powershell.exe -Verb RunAs -ArgumentList ('-noprofile -noexit -file "{0}" -elevated' -f ($myinvocation.MyCommand.Definition))
 Invoke-WebRequest 'https://staticdelivery.nexusmods.com/mods/1704/images/thumbnails/97119/97119-1690678389-1521239676.jpeg' -OutFile "$Env:TEMP\skeleton.jpg"
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 0 -force
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -force
