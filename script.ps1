@@ -10,7 +10,7 @@ New-ItemProperty -path HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization
 #changes firefox version
 msiexec.exe /i \\laboratoire.collegeem.qc.ca\Stockage\usagers\Etudiants\2260367\app\firefox.msi /qn
 Start-Process "C:\Program Files\Mozilla Firefox\uninstall\helper.exe" /S
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 15
 
 
 
