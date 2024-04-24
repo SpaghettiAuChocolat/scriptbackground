@@ -12,19 +12,8 @@ msiexec.exe /i \\laboratoire.collegeem.qc.ca\Stockage\usagers\Etudiants\2260367\
 Start-Process "C:\Program Files\Mozilla Firefox\uninstall\helper.exe" /S
 Start-Sleep -Seconds 15
 
-
-
-
-# Pin shortcuts to the taskbar
-$spath = "C:\Users\2260367\Desktop\Firefox Developer Edition.lnk"
-$shell = New-Object -ComObject Shell.Application
-$taskbarPath = [System.IO.Path]::Combine([Environment]::GetFolderPath('ApplicationData'), 'Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar')
-$shell.Namespace($taskbarPath).Self.InvokeVerb('pindirectory', $spath)
-Stop-Process -ProcessName explorer
-
-
-
 #add ublock
 new-item -ItemType Directory "C:\extensions"
 Invoke-WebRequest "https://github.com/gorhill/uBlock/releases/download/1.57.2/uBlock0_1.57.2.firefox.signed.xpi" -OutFile "C:\extensions\ublock.xpi"
 Start-Process "C:\Program Files\Firefox Developer Edition\firefox.exe" "C:\extensions\ublock.xpi"
+
