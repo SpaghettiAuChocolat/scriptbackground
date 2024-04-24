@@ -18,3 +18,10 @@ new-item -ItemType Directory "C:\extensions"
 Invoke-WebRequest "https://github.com/gorhill/uBlock/releases/download/1.57.2/uBlock0_1.57.2.firefox.signed.xpi" -OutFile "C:\extensions\ublock.xpi"
 Start-Process "C:\Program Files\Firefox Developer Edition\firefox.exe" "C:\extensions\ublock.xpi"
 
+#kill useless processes
+Stop-Process -ProcessName AgentConnectix
+Stop-Process -ProcessName Greenshot
+Stop-Process -ProcessName AdobeUpdateService
+Stop-Process -ProcessName AdobeIPCBroker
+Stop-Process -ProcessName WavesSvc64
+Stop-Process -ProcessName WavesSysSvc64
