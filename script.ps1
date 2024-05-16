@@ -9,14 +9,19 @@ New-ItemProperty -path HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization
 Stop-Process -ProcessName explorer
 
 #changes firefox version
+msiexec.exe /i \\laboratoire.collegeem.qc.ca\Stockage\usagers\Etudiants\2260367\app\search.msi /qn
 msiexec.exe /i \\laboratoire.collegeem.qc.ca\Stockage\usagers\Etudiants\2260367\app\firefox.msi /qn
 Start-Process "C:\Program Files\Mozilla Firefox\uninstall\helper.exe" /S
-Start-Sleep -Seconds 15
+Start-Sleep -Seconds 25
 
 #add ublock
 new-item -ItemType Directory "C:\extensions"
 Invoke-WebRequest "https://github.com/gorhill/uBlock/releases/download/1.57.2/uBlock0_1.57.2.firefox.signed.xpi" -OutFile "C:\extensions\ublock.xpi"
+Invoke-WebRequest "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi" -OutFile "C:\extensions\bitwarden.xpi"
 Start-Process "C:\Program Files\Firefox Developer Edition\firefox.exe" "C:\extensions\ublock.xpi"
+Start-Process "C:\Program Files\Firefox Developer Edition\firefox.exe" "C:\extensions\bitwarden.xpi"
+
+
 
 #kill useless processes
 Stop-Process -ProcessName AgentConnectix
