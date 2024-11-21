@@ -1,5 +1,5 @@
 #change background
-Invoke-WebRequest 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqxfBwfc0tNY1TmYazBI7Ntm7jUvIGFtD85g&s' -OutFile "$Env:TEMP\image.jpg"
+Invoke-WebRequest 'https://m.media-amazon.com/images/I/913FhoiimGL.jpg' -OutFile "$Env:TEMP\image.jpg"
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 0 -force
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -force
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name EnableTransparency -Value 0 -force
